@@ -1,0 +1,44 @@
+package br.com.alura.gerenciador.servlet;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class NovaEmpresaServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Cadastrando nova empresa");
+		String nomeEmpresa =req.getParameter("nome");
+		String dataEmpresa =req.getParameter("data");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+		try {
+			Date dataAbertura = sdf.parse(dataEmpresa);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Empresa empresa = new Empresa();
+		empresa.setNome(nomeEmpresa);
+		
+		Banco banco = new Banco();
+		banco.adiciona(empresa);
+		
+		//CHAMAR JSP		
+		RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		req.setAttribute("empresa", empresa.getNome());
+		rd.forward(req, resp);
+	}
+
+}

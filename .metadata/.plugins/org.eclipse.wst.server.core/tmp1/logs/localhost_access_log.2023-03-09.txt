@@ -1,0 +1,5 @@
+127.0.0.1 - - [09/Mar/2023:12:29:00 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:12:29:05 -0300] "GET /gerenciador/listaEmpresas.jsp HTTP/1.1" 200 189
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:12:29:05 -0300] "GET /gerenciador/listaEmpresas.jsp HTTP/1.1" 200 189
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:12:29:14 -0300] "GET /gerenciador/formNovaEmpresa.jsp HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:12:29:17 -0300] "POST /gerenciador/novaEmpresa HTTP/1.1" 500 5904
