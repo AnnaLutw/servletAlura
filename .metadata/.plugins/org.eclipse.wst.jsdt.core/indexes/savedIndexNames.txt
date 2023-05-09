@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\Users\anagt\OneDrive\Área de Trabalho\servletAlura\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4217884554.index
-2322604191.index
-456790899.index
-2518723974.index
-4090931215.index
-2460657763.index
